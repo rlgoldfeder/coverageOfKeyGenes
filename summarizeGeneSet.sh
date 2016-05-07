@@ -13,7 +13,7 @@ usage ()
 {
   echo 'Usage : coverageOfKeyGenes.sh -gatk <gatk_path> -bq <bq> -mq <mq>' 
   echo '                              -cov <cov> -g <geneList.bed> -bam <bam>'
-  echo '                              -prefix <bam_prefix> -r <ref.fa>'
+  echo '                              -prefix <bam_prefix> -r <ref.fa> -mem <gatk_gigs_mem>'
   exit
 }
 
@@ -48,6 +48,9 @@ case $1 in
                        ;;
         -r )           shift
                        ref_genome=$1
+                       ;;
+	-mem )           shift
+                       mem=$1
                        ;;
         * )            QUERY=$1
     esac
