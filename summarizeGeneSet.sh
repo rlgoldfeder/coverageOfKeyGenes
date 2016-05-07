@@ -28,15 +28,14 @@ case $1 in
                        gatk_path=$1
                        ;;
         -bq )           shift
-                       bq=$1
+                       bq=${1:-20}
                        ;;
         -mq )           shift
-                       mq=$1
+                       mq=${1:-1}
 		       ;;
         -cov )           shift
-                       cov=$1
+                       cov=${1:-20}
                        ;;
-
        	 -g )           shift
                        gene_list_path=$1
                        ;;
@@ -50,7 +49,7 @@ case $1 in
                        ref_genome=$1
                        ;;
 	-mem )           shift
-                       mem=$1
+                       mem=${1:-16}
                        ;;
         * )            QUERY=$1
     esac
